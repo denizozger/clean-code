@@ -60,7 +60,7 @@
  ```
 - Make meaningful distinctions
 
-  + Imagine you have `Product` class. If you have another called `ProductInfo` or `ProductData`, you have made the names dif- ferent without making them mean anything different. 
+  + Imagine you have `Product` class. If you have another called `ProductInfo` or `ProductData`, you have made the names dif- ferent without making them mean anything different. In the absence of specific conventions, the variable `moneyAmount` is indistinguishable from `money`, `customerInfo` is indistinguishable from `customer`, `accountData` is indistinguishable from `account`, and `theMessage` is indistinguishable from `message`. 
 
 
 
