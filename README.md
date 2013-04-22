@@ -30,21 +30,31 @@
 
 ## <a name='meaningfulNames'>Meaningful Names</a>
 
-- If a name requires a com- ment, then the name does not reveal its intent.
+- Use intention revealing names. If a name requires a comment, then the name does not reveal its intent.
 
 ```java
     // bad
-    int d; // elapsed time in da
+    int d; // elapsed time in days
 
     // good
     int elapsedTimeInDays;
  ```
 
+```java
+    // bad
+    public List<int[]> getThem() {
+List<int[]> list1 = new ArrayList<int[]>(); for (int[] x : theList)
+if (x[0] == 4) list1.add(x);
+return list1; }
 
+    // good
+    public List<int[]> getFlaggedCells() {
+List<int[]> flaggedCells = new ArrayList<int[]>(); for (int[] cell : gameBoard)
+if (cell[STATUS_VALUE] == FLAGGED) flaggedCells.add(cell);
+return flaggedCells; }
+ ```
 
-
-
-
+ 
 
 
 
