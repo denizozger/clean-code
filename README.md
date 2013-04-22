@@ -116,7 +116,7 @@
 
 ```java
 	// Does this function append s as the footer to something? Or does it append some footer to s?
-	appendFooter(s);
+	void appendFooter(s);
 
 	// good
 	report.appendFooter();
