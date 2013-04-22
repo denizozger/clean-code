@@ -60,8 +60,17 @@
  ```
 - Make meaningful distinctions
 
-  + Imagine you have `Product` class. If you have another called `ProductInfo` or `ProductData`, you have made the names dif- ferent without making them mean anything different. In the absence of specific conventions, the variable `moneyAmount` is indistinguishable from `money`, `customerInfo` is indistinguishable from `customer`, `accountData` is indistinguishable from `account`, and `theMessage` is indistinguishable from `message`. 
+  + Imagine you have `Product` class. If you have another called `ProductInfo` or `ProductData`, you have made the names different without making them mean anything different. In the absence of specific conventions, the variable `moneyAmount` is indistinguishable from `money`, `customerInfo` is indistinguishable from `customer`, `accountData` is indistinguishable from `account`, and `theMessage` is indistinguishable from `message`. 
 
+- Methods should have verb or verb phrase names like `postPayment`, `deletePage`, or `save`. When constructors are overloaded, use static factory methods with names that describe the arguments.
+
+```java
+	// bad
+	Complex fulcrumPoint = Complex.FromRealNumber(23.0);
+
+	// good
+	Complex fulcrumPoint = new Complex(23.0);
+```
 
 
 
