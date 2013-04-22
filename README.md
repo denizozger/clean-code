@@ -22,6 +22,7 @@
 - All developers feel the pressure to make messes in order to meet deadlines. True professionals know that the second part of the conundrum is wrong. You will not make the deadline by making the mess. Indeed, the mess will slow you down instantly, and will force you to miss the deadline. **The only way to make the deadline is to keep the code as clean as possible at all times.**
 - **Bad code tempts the mess to grow.** When others change bad code, they tend to make it worse. Metaphor: A building with broken windows looks like nobody cares about it. So other people stop caring. They allow more windows to become broken. Eventually they actively break them.
 - Clean code should be: **Pleasing to read, does one thing well, minimal, looks like it was written by someone who cares**
+- If we all checked in our code a little cleaner than when we checked it out, the code simply could not rot. The cleanup doesn’t have to be something big. Change one variable name for the better, break up one function that’s a little too large, eliminate one small bit of duplication.
 
 
 
