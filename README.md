@@ -112,7 +112,15 @@
 	// better
 	void assertExpectedEqualsActual(expected, actual)
 ```
+- Anything that forces you to check the function signature is equivalent to a double-take. In the days before object oriented programming it was sometimes necessary to have output arguments. However, much of the need for output arguments disappears in OO languages because `this` is *intended* to act as an output argument.
 
+```java
+	// does this function append s as the footer to something? Or does it append some footer to s? Is s an input or an output?
+	appendFooter(s);
 
+	// good
+	report.appendFooter();
+```
+*to be continued..*
 
 
