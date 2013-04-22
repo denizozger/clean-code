@@ -81,9 +81,37 @@
 
 ## <a name='methods'>Methods</a>
 
+- The first rule of methods is that they should be small. The second rule of functions is that *they should be smaller than that*.
 
+- Methods should not be 100 lines long. Methods should hardly ever be 20 lines long. 
 
+- Methods should do only one thing. They should do it well. They should do it only.
 
+- How to determine if a method is doing only one thing? Describe the method by describing it as a brief **TO** paragraph: *TO RenderPageWithSetupsAndTeardowns, we check to see whether the page is a test page and if so, we include the setups and teardowns. In either case we render the page in HTML.*
+
+- **Don’t be afraid to make a name long**. A long descriptive name is better than a short enigmatic name. A long descriptive name is better than a long descriptive comment. The smaller and more focused a method is, the easier it is to choose a descriptive name. Don’t be afraid to spend time choosing a name. 
+
+- The ideal number of arguments for a function is **zero** (niladic). Next comes one (monadic), followed closely by two (dyadic). Three arguments (triadic) should be avoided where possible. More than three (polyadic) requires very special justification—and then shouldn’t be used anyway.
+
+```java
+	// bad
+	Circle makeCircle(double x, double y, double radius); 
+
+	// good
+	Circle makeCircle(Point center, double radius);
+```
+
+- Passing a `boolean` into a function is a truly terrible practice. It immediately complicates the signature of the method, loudly proclaiming that this function does more than one thing. **It does one thing if the flag is true and another if the flag is false!** The method call `render(true)` is just plain confusing to a poor reader. Mousing over the call and seeing `render(boolean isSuite)` helps a little, but not that much. We should have split the function into two: `renderForSuite()` and `renderForSingleTest()`.
+
+- Choosing good names for a function can go a long way toward explaining the intent of the function and the order and intent of the arguments. 
+
+```java
+	// good
+	assertEquals(expected, actual)
+
+	// better
+	assertExpectedEqualsActual(expected, actual)
+```
 
 
 
