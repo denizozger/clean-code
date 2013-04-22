@@ -1,6 +1,6 @@
 # Software Craftmanship Guide() {
 
-*Extracts from book [Clean Code: A Handbook of Agile Software Craftsmanship by Robert C. Martin](http://www.amazon.co.uk/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882). My intention is not to provide a summary, but to share my notes that I want to keep in mind*.
+*Extracts from book [Clean Code: A Handbook of Agile Software Craftsmanship by Robert C. Martin](http://www.amazon.co.uk/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882). My intention is not to provide a summary, but to share the notes that I want to keep in mind*.
 
 ## <a name='TOC'>Table of Contents</a>
 
