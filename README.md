@@ -60,7 +60,7 @@
  ```
 - Make meaningful distinctions
 
-+ Imagine you have `Product` class. If you have another called `ProductInfo` or `ProductData`, you have made the names dif- ferent without making them mean anything different. 
+  + Imagine you have `Product` class. If you have another called `ProductInfo` or `ProductData`, you have made the names dif- ferent without making them mean anything different. 
 
 
 
