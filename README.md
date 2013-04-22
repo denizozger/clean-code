@@ -7,6 +7,7 @@
 1. [Introduction](#introduction)
 2. [Clean Code](#cleanCode)
 3. [Meaningful Names](#meaningfulNames)
+4. [Methods](#methods)
 
 ## <a name='introduction'>Introduction</a>
 
@@ -62,16 +63,23 @@
 
   + Imagine you have `Product` class. If you have another called `ProductInfo` or `ProductData`, you have made the names different without making them mean anything different. In the absence of specific conventions, the variable `moneyAmount` is indistinguishable from `money`, `customerInfo` is indistinguishable from `customer`, `accountData` is indistinguishable from `account`, and `theMessage` is indistinguishable from `message`. 
 
-- Methods should have verb or verb phrase names like `postPayment`, `deletePage`, or `save`. When constructors are overloaded, use static factory methods with names that describe the arguments.
+- Methods should have verb or verb phrase names like `postPayment`, `deletePage`, or `save`. When constructors are overloaded, use static factory methods with names that describe the arguments. Consider enforcing their use by making the corresponding constructors private.
 
 ```java
 	// bad
-	Complex fulcrumPoint = Complex.FromRealNumber(23.0);
+	Complex fulcrumPoint = new Complex(23.0);
 
 	// good
-	Complex fulcrumPoint = new Complex(23.0);
+	Complex fulcrumPoint = Complex.FromRealNumber(23.0);
 ```
 
+- Pick one word per concept. It’s confusing to have `fetch`, `retrieve`, and `get` as equivalent methods of different classes. 
+
+- People are afraid of renaming things for fear that some other developers will object. Do not share that fear and be grateful when names change (for the better). 
+
+**[[⬆]](#TOC)**
+
+## <a name='methods'>Methods</a>
 
 
 
