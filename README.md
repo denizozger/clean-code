@@ -106,11 +106,11 @@
 - Choosing good names for a function can go a long way toward explaining the intent of the function and the order and intent of the arguments. 
 
 ```java
-	// good
-	assertEquals(expected, actual)
+	// ok
+	void assertEquals(expected, actual)
 
 	// better
-	assertExpectedEqualsActual(expected, actual)
+	void assertExpectedEqualsActual(expected, actual)
 ```
 
 
