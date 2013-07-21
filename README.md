@@ -8,6 +8,8 @@
 2. [Clean Code](#cleanCode)
 3. [Meaningful Names](#meaningfulNames)
 4. [Methods](#methods)
+5. [Comments](#comments)
+
 
 ## <a name='introduction'>Introduction</a>
 
@@ -142,21 +144,64 @@
 - Prefer exceptions to returning error codes
 
 ```java
-if (deletePage(page) == E_OK) {
-if (registry.deleteReference(page.name) == E_OK) {
-if (configKeys.deleteKey(page.name.makeKey()) == E_OK){
-logger.log("page deleted");
-} else {
-logger.log("configKey not deleted");
-}
-} else {
-logger.log("deleteReference from registry failed");
-}
-} else {
-logger.log("delete failed");
-return E_ERROR;
-}
+	// Bad
+	if (deletePage(page) == E_OK) {
+		if (registry.deleteReference(page.name) == E_OK) {
+			if (configKeys.deleteKey(page.name.makeKey()) == E_OK){
+			logger.log("page deleted");
+			} else {
+			logger.log("configKey not deleted");
+			}
+		} else {
+			logger.log("deleteReference from registry failed");
+		}
+	} else {
+		logger.log("delete failed");
+		return E_ERROR;
+	}
+	
+	// Good
+	try {
+		deletePage(page);
+		registry.deleteReference(page.name);
+		configKeys.deleteKey(page.name.makeKey());
+	}
+	catch (Exception e) {
+		logger.log(e.getMessage());
+	}
 ```
+
+- Functions should do one thing. Error handing is one thing. Thus, a function that handles
+errors should do nothing else. This implies (as in the example above) that if the keyword
+try exists in a function, it should be the very first word in the function and that there
+should be nothing after the catch/finally blocks.
+
+- Duplication may be the root of all evil in software.
+
+- "When I write functions, they come out long and complicated. They have lots of
+indenting and nested loops. They have long argument lists. The names are arbitrary, and
+there is duplicated code. But I also have a suite of unit tests that cover every one of those
+clumsy lines of code. So then I massage and refine that code, splitting out functions, 
+changing names, eliminating duplication. I shrink the methods and reorder them. Sometimes I break out whole
+classes, all the while keeping the tests passing. In the end, I wind up with functions that
+follow the rules I’ve laid down in this chapter. I don’t write them that way to start.
+I don’t think anyone could."
+
+- Functions are the verbs of that language, and classes are the nouns. Master programmers think 
+of systems as stories to be told rather than programs to be written.
+
+**[[⬆]](#TOC)**
+
+## <a name='comments'>Comments</a>
+
+- "Don't comment bad code - rewrite it."
+
+- The proper use of comments is to compensate for our failure to express ourself in
+code. Note that I used the word failure. I meant it. Comments are always failures. We must
+have them because we cannot always figure out how to express ourselves without them,
+but their use is not a cause for celebration. So when you find yourself in a position where 
+you need to write a comment, think it through and see whether there isn’t some way to turn 
+the tables and express yourself in code.
 
 
 
