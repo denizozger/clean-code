@@ -128,7 +128,8 @@
 	// bad
 	public boolean set(String attribute, String value);
 	
-	// “If the username attribute was previously set to unclebob” or “set the username attribute to unclebob and if that worked then...”
+	// “If the username attribute was previously set to unclebob” or 
+		// “set the username attribute to unclebob and if that worked then...”
 	if (set("username", "unclebob"))...
 
 	// good
@@ -137,6 +138,27 @@
 		...
 	}
 ```
+
+- Prefer exceptions to returning error codes
+
+```java
+if (deletePage(page) == E_OK) {
+if (registry.deleteReference(page.name) == E_OK) {
+if (configKeys.deleteKey(page.name.makeKey()) == E_OK){
+logger.log("page deleted");
+} else {
+logger.log("configKey not deleted");
+}
+} else {
+logger.log("deleteReference from registry failed");
+}
+} else {
+logger.log("delete failed");
+return E_ERROR;
+}
+```
+
+
 
 *to be continued..*
 
