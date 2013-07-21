@@ -171,8 +171,8 @@
 	}
 ```
 
-- Functions should do one thing. Error handing is one thing. Thus, a function that handles
-errors should do nothing else. This implies (as in the example above) that if the keyword
+- Functions should do one thing. Error handing is one thing. Thus, **a function that handles
+errors should do nothing else**. This implies (as in the example above) that if the keyword
 try exists in a function, it should be the very first word in the function and that there
 should be nothing after the catch/finally blocks.
 
@@ -187,7 +187,7 @@ classes, all the while keeping the tests passing. In the end, I wind up with fun
 follow the rules I’ve laid down in this chapter. I don’t write them that way to start.
 I don’t think anyone could."
 
-- Functions are the verbs of that language, and classes are the nouns. Master programmers think 
+- **Functions are the verbs of that language, and classes are the nouns.** Master programmers think 
 of systems as stories to be told rather than programs to be written.
 
 **[[⬆]](#TOC)**
@@ -196,14 +196,18 @@ of systems as stories to be told rather than programs to be written.
 
 - "Don't comment bad code - rewrite it."
 
-- The proper use of comments is to compensate for our failure to express ourself in
-code. Note that I used the word failure. I meant it. Comments are always failures. We must
+- **The proper use of comments is to compensate for our failure to express ourself in
+code**. Note that I used the word failure. I meant it. Comments are always failures. We must
 have them because we cannot always figure out how to express ourselves without them,
-but their use is not a cause for celebration. So when you find yourself in a position where 
+but their use is not a cause for celebration. **So when you find yourself in a position where 
 you need to write a comment, think it through and see whether there isn’t some way to turn 
-the tables and express yourself in code.
+the tables and express yourself in code**.
 
+- The older a comment is, and the farther away it is from the code it describes,
+the more likely it is to be just plain wrong. The reason is simple. Programmers can’t realistically
+maintain them.
 
+- **Comments Do Not Make Up for Bad Code!**
 
 *to be continued..*
 
