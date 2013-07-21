@@ -9,6 +9,8 @@
 3. [Meaningful Names](#meaningfulNames)
 4. [Methods](#methods)
 5. [Comments](#comments)
+6. [Formatting](#formatting)
+7. [Objects and Data Structures](#objects)
 
 
 ## <a name='introduction'>Introduction</a>
@@ -207,7 +209,92 @@ the tables and express yourself in code**.
 the more likely it is to be just plain wrong. The reason is simple. Programmers can’t realistically
 maintain them.
 
-- **Comments Do Not Make Up for Bad Code!**
+- **Comments Do Not Make Up for Bad Code!** One of the more common motivations for writing comments is bad code. 
+We write a module and we know it is confusing and disorganized. We know it’s a mess. So we say to ourselves,
+“Ooh, I’d better comment that!” No! You’d better clean it! Clear and expressive code with few comments is 
+far superior to cluttered and complex code with lots of comments. **Rather than spend your time writing the 
+comments that explain the mess you’ve made, spend it cleaning that mess.**
+
+- Explain yourself in code
+
+```java
+	// Bad:
+	
+	// Check to see if the employee is eligible for full benefits
+		if ((employee.flags & HOURLY_FLAG) &&
+		(employee.age > 65))
+	
+	// Good:
+	if (employee.isEligibleForFullBenefits())
+```
+
+- **Avoid redundant comments**: These comments below probably takes longer to read than the code itself
+
+```java
+	// Utility method that returns when this.closed is true. Throws an exception
+	// if the timeout is reached.
+	public synchronized void waitForClose(final long timeoutMillis)	throws Exception {
+		if(!closed) {
+			wait(timeoutMillis);
+		if(!closed)
+			throw new Exception("MockResponseSender could not be closed");
+		}
+	}
+```
+
+- **Avoid mandated comments**: It is just plain silly to have a rule that says that every function must have a javadoc, or
+every variable must have a comment.
+
+```java
+	/**
+	*
+	* @param title The title of the CD
+	* @param author The author of the CD
+	* @param tracks The number of tracks on the CD
+	* @param durationInMinutes The duration of the CD in minutes
+	*/
+	public void addCD(String title, String author, int tracks, int durationInMinutes) {
+		CD cd = new CD();
+		cd.title = title;
+		cd.author = author;
+		cd.tracks = tracks;
+		cd.duration = duration;
+		cdList.add(cd);
+	}
+```
+
+- Don't use a comment when you can use a function or variable
+
+```java
+
+	// Bad:
+	
+	// does the module from the global list <mod> depend on the subsystem we are part of?
+	if (smodule.getDependSubsystems().contains(subSysMod.getSubSystem()))
+	
+	// Good:
+	ArrayList moduleDependees = smodule.getDependSubsystems();
+	String ourSubSystem = subSysMod.getSubSystem();
+	if (moduleDependees.contains(ourSubSystem))
+
+```
+
+- Few practices are as odious as commenting-out code. Don’t do this! Others who see that commented-out code won’t 
+have the courage to delete it. They’ll think it is there for a reason and is too important to delete. 
+So commented-out code gathers like dregs at the bottom of a bad bottle of wine. There was a time, back in the sixties, 
+when commenting-out code might have been useful. But we’ve had good source code control systems for a very long time now. 
+Those systems will remember the code for us.
+
+**[[⬆]](#TOC)**
+
+## <a name='formatting'>Formatting</a>
+
+- **Dependent Functions**: If one function calls another, they should be vertically close,
+and the caller should be above the callee, if at all possible. This gives the program a natural flow.
+
+**[[⬆]](#TOC)**
+
+## <a name='objects'>Objects</a>
 
 *to be continued..*
 
