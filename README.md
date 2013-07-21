@@ -279,8 +279,8 @@ every variable must have a comment.
 
 ```
 
-- Few practices are as odious as commenting-out code. Don’t do this! Others who see that commented-out code won’t 
-have the courage to delete it. They’ll think it is there for a reason and is too important to delete. 
+- Few practices are as odious as commenting-out code. Don’t do this! **Others who see that commented-out code won’t 
+have the courage to delete it. They’ll think it is there for a reason and is too important to delete**. 
 So commented-out code gathers like dregs at the bottom of a bad bottle of wine. There was a time, back in the sixties, 
 when commenting-out code might have been useful. But we’ve had good source code control systems for a very long time now. 
 Those systems will remember the code for us.
