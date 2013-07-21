@@ -122,6 +122,21 @@
 	report.appendFooter();
 ```
 
+- Functions should either do something or answer something, but not both.
+
+```java
+	// bad
+	public boolean set(String attribute, String value);
+	
+	// “If the username attribute was previously set to unclebob” or “set the username attribute to unclebob and if that worked then...”
+	if (set("username", "unclebob"))...
+
+	// good
+	if (attributeExists("username")) {
+		setAttribute("username", "unclebob");
+		...
+	}
+```
 
 *to be continued..*
 
