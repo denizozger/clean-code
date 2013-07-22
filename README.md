@@ -199,9 +199,8 @@ of systems as stories to be told rather than programs to be written.
 - "Don't comment bad code - rewrite it."
 
 - **The proper use of comments is to compensate for our failure to express ourself in
-code**. Note that I used the word failure. I meant it. Comments are always failures. We must
-have them because we cannot always figure out how to express ourselves without them,
-but their use is not a cause for celebration. **So when you find yourself in a position where 
+code**. Comments are always failures. We must have them because we cannot always figure out how to express 
+ourselves without them, but their use is not a cause for celebration. **So when you find yourself in a position where 
 you need to write a comment, think it through and see whether there isn’t some way to turn 
 the tables and express yourself in code**.
 
