@@ -302,3 +302,7 @@ and the caller should be above the callee, if at all possible. This gives the pr
 # };
 
 
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/denizozger/clean-code/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
