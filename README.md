@@ -307,7 +307,8 @@ and the caller should be above the callee, if at all possible. This gives the pr
 
 ```java
 public void registerItem(Item item) { if (item != null) {
-	ItemRegistry registry = peristentStore.getItemRegistry(); if (registry != null) {
+	ItemRegistry registry = peristentStore.getItemRegistry(); 
+	if (registry != null) {
 		Item existing = registry.getItem(item.getID());
 		if (existing.getBillingPeriod().hasRetailOwner()) {
 			existing.register(item); }
