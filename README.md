@@ -295,9 +295,53 @@ and the caller should be above the callee, if at all possible. This gives the pr
 
 ## <a name='objects'>Objects</a>
 
-*to be continued..*
+*to be written*
 
 **[[⬆]](#TOC)**
+
+## <a name='error-handling'>Error Handling</a>
+
+- Many code bases are com- pletely dominated by error handling. When I say dominated, I don’t mean that error han- dling is all that they do. I mean that it is nearly impossible to see what the code does because of all of the scattered error handling. Error handling is important, but if it obscures logic, it’s wrong.
+
+- Don’t return null. I can’t begin to count the number of applications I’ve seen in which nearly every other line was a check for null.
+
+```java
+public void registerItem(Item item) { if (item != null) {
+	ItemRegistry registry = peristentStore.getItemRegistry(); if (registry != null) {
+		Item existing = registry.getItem(item.getID());
+		if (existing.getBillingPeriod().hasRetailOwner()) {
+			existing.register(item); }
+		} 
+	}
+}
+
+``` 
+
+If you are tempted to return null from a method, consider throwing an exception or returning a SPECIAL CASE object instead. If you are calling a null-returning method from a third-party API, consider wrapping that method with a method that either throws an exception or returns a special case object.
+
+Bad:
+
+```java
+List<Employee> employees = getEmployees(); 
+if (employees != null) {
+	for(Employee e : employees) { 
+		totalPay += e.getPay();
+	} 
+}
+
+```
+
+Right now, getEmployees can return null, but does it have to? If we change getEmployee so that it returns an empty list, we can clean up the code:
+
+```java
+List<Employee> employees = getEmployees(); 
+for(Employee e : employees) {
+	totalPay += e.getPay(); 
+}
+```
+
+
+
 
 # };
 
@@ -305,4 +349,3 @@ and the caller should be above the callee, if at all possible. This gives the pr
 
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/denizozger/clean-code/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-
